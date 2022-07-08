@@ -1,0 +1,67 @@
+{
+  "url": "https://www.google.com/",
+  "process": {
+    "Search": [
+      {
+        "find": "css selector",
+        "element": "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.a4bIc > input",
+        "action": "send_keys",
+        "press_key": "enter",
+        "value": "Python",
+        "sleep": 1
+      },
+      {
+        "find": "id",
+        "element": "center_col",
+        "child": {
+          "find": "css selector",
+          "element": "a",
+          "multiple": true,
+          "action": "click",
+          "sleep": 2,
+          "rule": [
+            {
+              "type": "filter",
+              "settings": {
+                "by": "attr",
+                "name": "href",
+                "expected": "https://www.python.org/",
+                "return": "0"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "Python News": [
+      {
+        "find": "id",
+        "element": "news",
+        "action": "click",
+        "sleep": 3
+      },
+      {
+        "find": "class name",
+        "element": "list-recent-posts",
+        "child": {
+          "find": "css selector",
+          "element": "a",
+          "multiple": true,
+          "action": "click",
+          "sleep": 2,
+          "rule": [
+            {
+              "type": "filter",
+              "settings": {
+                "by": "attr",
+                "name": "href",
+                "expected": "http",
+                "return": "0"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
