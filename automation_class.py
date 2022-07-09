@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
 from time import sleep
 from traceback import format_exc
 
@@ -12,10 +13,15 @@ class BasicAutomationProcess:
         self.url = process_dict['url']
         self.actions_need_format = {
             'send_keys': 'value',
+            'select': [
+                'select_by',
+                'value'
+            ]
         }
         self.actions = {
             'click': 'element.click()',
             'send_keys': 'element.send_keys("{}";)',
+            'select': 'Select(element).select_by_{}("{}")'
         }
         self.element_attributes = {
             'attr': 'element.get_attribute("{}")',
