@@ -53,6 +53,7 @@ _Ps: The items inside the `process` attribute can be named however you like with
       "action": "",
       "value": "",
       "press_key": "",
+      "select_by": "",
       "rule": [
         {
           "type": "",
@@ -100,10 +101,20 @@ _This attribute is necessary when you want to perform some action under the elem
 ```text
   click
   send_keys
+  select
 ```
 
 #### Value:
-_This attribute is needed when the attribute value ``action`` is ``send_keys``, the script will send the value assigned here to the running element._
+_This attribute is needed when the attribute value ``action`` is ``send_keys`` or `select`, the script will send the value assigned here to the running element._
+
+#### Select_by:
+_This attribute is necessary when the value of the `action` attribute is `select`, so that the script will know where to look for the value assigned in the `value` attribute.<br>
+These are the options:_
+```text
+  value
+  index
+  visible_text
+```
 
 #### Press_key:
 _This attribute can be added when the value of the ``action`` attribute is ``send_keys``, the options can be found [here](https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys)_<br>
