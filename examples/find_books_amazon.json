@@ -1,0 +1,23 @@
+{
+  "url": "https://www.amazon.com.br/",
+  "process": {
+    "Search": [
+      {
+        "find": "id",
+        "element": "searchDropdownBox",
+        "action": "select",
+        "value": "search-alias=stripbooks",
+        "select_by": "value",
+        "sleep": 5
+      },
+      {
+        "find": "id",
+        "element": "twotabsearchtextbox",
+        "action": "send_keys",
+        "value": "Python",
+        "press_key": "enter",
+        "sleep": 10
+      }
+    ]
+  }
+}
